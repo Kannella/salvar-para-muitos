@@ -14,7 +14,10 @@ public class Category {
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "categories")
+    //Dentro da classe Category eu tenho uma referencia para uma colecao de produtos,
+    // so que a colecao no caso do muitos para muitos eu tenho que colocar o set para evitar duplicidade de linhas iguais
+
+    @ManyToMany(mappedBy = "categories") //Indicando que o atributo abaixo faz parte de um Relacionamento muito para muitos
     private Set<Product> products = new HashSet<>();
 
     public Category() {
